@@ -106,7 +106,7 @@ const WhatWeDoSection = () => (
     <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-16">
       <ScrollReveal>
         <div>
-          <h3 className="font-serif text-2xl mb-8 text-muted-foreground">Amit <span className="italic">nem</span> csinálunk</h3>
+          <h3 className="font-serif text-2xl mb-8 text-foreground/70">Amit <span className="italic">nem</span> csinálunk</h3>
           <ul className="space-y-4">
             {[
               "Moha panel falak",
@@ -114,8 +114,8 @@ const WhatWeDoSection = () => (
               "Steril, ismétlődő minták",
               "Kontrollálatlan naturalizmus",
             ].map((item, i) => (
-              <li key={i} className="flex items-start gap-3 text-muted-foreground font-light">
-                <span className="text-muted-foreground/50 mt-0.5">✕</span>
+              <li key={i} className="flex items-start gap-3 text-foreground/60 font-light">
+                <span className="text-foreground/40 mt-0.5">✕</span>
                 {item}
               </li>
             ))}
