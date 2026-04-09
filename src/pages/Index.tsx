@@ -1,7 +1,7 @@
 import ScrollReveal from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-wall.jpg";
-import detailImage from "@/assets/detail-texture.jpg";
+import detailImage from "@/assets/vams-showcase.png";
 import beforeAfterImage from "@/assets/before-after.jpg";
 
 const ctaLink = "#referencia";
