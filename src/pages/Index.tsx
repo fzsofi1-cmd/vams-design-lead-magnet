@@ -16,16 +16,24 @@ const HeroSection = () => (
         height={1080}
         className="w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-background/60" />
+      {/* Stronger contrast: deeper base + bottom gradient for text legibility */}
+      <div className="absolute inset-0 bg-background/80" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/40" />
     </div>
     <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-      <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl leading-tight mb-6 animate-fade-up">
-        Az irodád működik.
+      <p className="text-gold uppercase tracking-[0.3em] text-xs md:text-sm mb-6 animate-fade-up">
+        Biophilic fal installáció irodákba
+      </p>
+      <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl leading-tight mb-6 animate-fade-up text-foreground drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)]">
+        Nem háttér.
         <br />
-        <span className="text-gradient-gold italic">De nem hagy nyomot.</span>
+        <span className="text-gradient-gold italic">Fókuszpont.</span>
       </h1>
-      <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light animate-fade-up" style={{ animationDelay: "0.2s" }}>
-        Vams Design – biophilic fal installációk, amelyek meghatározzák a tér karakterét.
+      <p className="text-foreground/90 text-lg md:text-xl max-w-2xl mx-auto mb-4 font-light animate-fade-up drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]" style={{ animationDelay: "0.2s" }}>
+        Az irodád a leghangosabb branding eszközöd — és most épp azt mondja, hogy átlagos.
+      </p>
+      <p className="text-foreground/80 text-base md:text-lg max-w-2xl mx-auto mb-10 font-light animate-fade-up drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]" style={{ animationDelay: "0.3s" }}>
+        Fotózható. Megosztható. Emlékezetes.
       </p>
       <div className="animate-fade-up" style={{ animationDelay: "0.4s" }}>
         <a href={ctaLink}>
@@ -33,7 +41,7 @@ const HeroSection = () => (
             Jelentkezem referencia projektre
           </Button>
         </a>
-        <p className="text-muted-foreground text-sm mt-4 tracking-wide">
+        <p className="text-foreground/70 text-sm mt-4 tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
           Csak 2 iroda kerül kiválasztásra.
         </p>
       </div>
@@ -45,18 +53,25 @@ const ProblemSection = () => (
   <section className="py-24 md:py-32 px-6">
     <div className="max-w-5xl mx-auto">
       <ScrollReveal>
-        <h2 className="font-serif text-3xl md:text-4xl text-center mb-16">
-          A legtöbb iroda ma <span className="italic text-gradient-gold">így</span> néz ki:
+        <h2 className="font-serif text-3xl md:text-5xl text-center mb-6">
+          A legtöbb iroda jól működik.
+          <br />
+          <span className="italic text-gradient-gold">De semmit nem mond.</span>
         </h2>
+      </ScrollReveal>
+      <ScrollReveal delay={150}>
+        <p className="text-muted-foreground text-lg text-center max-w-2xl mx-auto mb-16 font-light leading-relaxed">
+          Monitorok. Fehér falak. Funkció. Minden a helyén van — csak karakter nincs. A vendégeid belépnek, körbenéznek… és semmi nem marad meg.
+        </p>
       </ScrollReveal>
       <div className="grid md:grid-cols-3 gap-8 mb-16">
         {[
-          { icon: "□", text: "Funkcionálisan jól működik, vizuálisan karaktertelen" },
-          { icon: "◇", text: "Nincs identitása – nem tükrözi a brandet" },
-          { icon: "○", text: "Nem fotogén, nem megosztható, nem emlékezetes" },
+          { icon: "□", text: "Funkcionális, de vizuálisan unalmas" },
+          { icon: "◇", text: "Nincs identitás — nem tükrözi a brandet" },
+          { icon: "○", text: "Nem fotogén, nem lesz belőle tartalom" },
         ].map((item, i) => (
           <ScrollReveal key={i} delay={i * 150}>
-            <div className="bg-secondary/50 border border-border p-8 text-center">
+            <div className="bg-secondary/50 border border-border p-8 text-center h-full">
               <span className="text-gold text-3xl block mb-4">{item.icon}</span>
               <p className="text-secondary-foreground font-light leading-relaxed">{item.text}</p>
             </div>
@@ -65,7 +80,7 @@ const ProblemSection = () => (
       </div>
       <ScrollReveal>
         <p className="text-center text-muted-foreground text-lg italic">
-          Hatékony. De személytelen. <span className="text-foreground">Ez változhat.</span>
+          Ez nem esztétikai kérdés. <span className="text-foreground">Ez branding kérdés.</span>
         </p>
       </ScrollReveal>
     </div>
@@ -76,13 +91,14 @@ const SolutionSection = () => (
   <section className="py-24 md:py-32 px-6 bg-charcoal-light">
     <div className="max-w-6xl mx-auto">
       <ScrollReveal>
+        <p className="text-gold uppercase tracking-[0.3em] text-sm text-center mb-6">Az irodád mint branding eszköz</p>
         <h2 className="font-serif text-4xl md:text-6xl text-center mb-6">
-          Nem dekoráció. <span className="text-gradient-gold italic">Fókuszpont.</span>
+          Nem zöldfal. <span className="text-gradient-gold italic">Biophilic fal installáció.</span>
         </h2>
       </ScrollReveal>
       <ScrollReveal delay={200}>
         <p className="text-muted-foreground text-lg text-center max-w-2xl mx-auto mb-16 font-light leading-relaxed">
-          Organikus, de kontrollált. Rétegzett 3D struktúra, integrált növények és megvilágítás – minden elem a tér hangulatát szolgálja. Nem kiegészítő, hanem kiindulópont.
+          A „zöldfal" dekoráció. A biophilic fal installáció a tér identitása. Organikus, de kontrollált kompozíció. Rétegzett, 3D struktúra. Integrált fények. Nem növényeket rakunk a falra — fókuszpontot tervezünk.
         </p>
       </ScrollReveal>
       <ScrollReveal delay={300}>
@@ -110,9 +126,9 @@ const WhatWeDoSection = () => (
           <ul className="space-y-4">
             {[
               "Moha panel falak",
-              "Dzsungel fal káosz",
+              "Sablon zöldfalak",
               "Steril, ismétlődő minták",
-              "Kontrollálatlan naturalizmus",
+              "Kontroll nélküli „természetesség”",
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-foreground/60 font-light">
                 <span className="text-foreground/40 mt-0.5">✕</span>
@@ -149,9 +165,14 @@ const DesireSection = () => (
   <section className="py-24 md:py-32 px-6 bg-charcoal-light">
     <div className="max-w-5xl mx-auto">
       <ScrollReveal>
-        <h2 className="font-serif text-3xl md:text-5xl text-center mb-16">
-          Képzeld el, hogy az irodád:
+        <h2 className="font-serif text-3xl md:text-5xl text-center mb-6">
+          Az a fal, <span className="italic text-gradient-gold">amire emlékeznek.</span>
         </h2>
+      </ScrollReveal>
+      <ScrollReveal delay={150}>
+        <p className="text-muted-foreground text-lg text-center max-w-2xl mx-auto mb-16 font-light leading-relaxed">
+          Belép az ügyfeled. Megáll. Lefotózza. Megosztja. Ez nem véletlen — ez tervezés.
+        </p>
       </ScrollReveal>
       <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto mb-20">
         {[
@@ -183,20 +204,61 @@ const DesireSection = () => (
   </section>
 );
 
+const AudienceSection = () => (
+  <section className="py-24 md:py-32 px-6">
+    <div className="max-w-4xl mx-auto text-center">
+      <ScrollReveal>
+        <h2 className="font-serif text-3xl md:text-5xl mb-6">
+          Kinek <span className="italic text-gradient-gold">szól</span>
+        </h2>
+      </ScrollReveal>
+      <ScrollReveal delay={150}>
+        <p className="text-muted-foreground text-lg font-light mb-12">
+          Ez nem dekoráció. Akkor jelentkezz, ha fontos, mit kommunikál a tered.
+        </p>
+      </ScrollReveal>
+      <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+        {[
+          "Startup irodák",
+          "Kreatív ügynökségek",
+          "Coworking terek",
+          "Image-tudatos csapatok",
+        ].map((item, i) => (
+          <ScrollReveal key={i} delay={i * 100}>
+            <div className="border border-border p-6">
+              <p className="text-foreground font-light text-sm">{item}</p>
+            </div>
+          </ScrollReveal>
+        ))}
+      </div>
+      <ScrollReveal delay={300}>
+        <div className="max-w-2xl mx-auto text-left border-l-2 border-gold pl-6">
+          <p className="text-foreground/80 font-light mb-2">Akkor jelentkezz, ha:</p>
+          <ul className="space-y-2 text-foreground/70 font-light">
+            <li>— fontos, mit kommunikál a tered</li>
+            <li>— számít, mit visznek magukkal a vendégeid</li>
+            <li>— a design üzleti eszköz nálad</li>
+          </ul>
+        </div>
+      </ScrollReveal>
+    </div>
+  </section>
+);
+
 const ReferenceSection = () => (
-  <section id="referencia" className="py-24 md:py-32 px-6">
+  <section id="referencia" className="py-24 md:py-32 px-6 bg-charcoal-light">
     <div className="max-w-3xl mx-auto text-center">
       <ScrollReveal>
-        <p className="text-gold uppercase tracking-[0.3em] text-sm mb-6">Limitált program</p>
+        <p className="text-gold uppercase tracking-[0.3em] text-sm mb-6">Két hely maradt</p>
         <h2 className="font-serif text-3xl md:text-5xl mb-8">
-          Referencia Partner Program
+          Referencia program
           <br />
-          <span className="text-gradient-gold italic">– 2 iroda</span>
+          <span className="text-gradient-gold italic">– limitált lehetőség</span>
         </h2>
       </ScrollReveal>
       <ScrollReveal delay={200}>
         <p className="text-muted-foreground text-lg font-light leading-relaxed mb-12 max-w-xl mx-auto">
-          A Vams Design 2 irodát választ ki referencia projekthez – prémium installáció különleges feltételekkel, cserébe fotózási jogokért és ajánlásért.
+          Két irodát választunk ki referencia partnernek. Nem többet.
         </p>
       </ScrollReveal>
       <ScrollReveal delay={300}>
@@ -205,20 +267,27 @@ const ReferenceSection = () => (
           <ul className="space-y-3 text-secondary-foreground font-light">
             <li className="flex items-center justify-center gap-3">
               <span className="text-gold">—</span>
-              Professzionális fotódokumentáció a térről
+              Teljes tervezés és kivitelezés
             </li>
             <li className="flex items-center justify-center gap-3">
               <span className="text-gold">—</span>
-              Tartalom, amit social mediára és brand anyagokhoz használhatsz
+              Egyedi biophilic fal installáció
             </li>
             <li className="flex items-center justify-center gap-3">
               <span className="text-gold">—</span>
-              Egy tér, ami vizuális identitás-elemmé válik
+              Fotó és videó dokumentáció
+            </li>
+            <li className="flex items-center justify-center gap-3">
+              <span className="text-gold">—</span>
+              Egy tér, ami a branded része lesz
             </li>
           </ul>
         </div>
       </ScrollReveal>
       <ScrollReveal delay={400}>
+        <p className="font-serif text-2xl md:text-3xl text-foreground mb-8 italic">
+          Te leszel az egyik?
+        </p>
         <a href="mailto:hello@vamsdesign.com?subject=Referencia%20Partner%20Program%20-%20Jelentkez%C3%A9s">
           <Button variant="hero" size="lg" className="px-12 py-6 text-sm">
             Jelentkezem referencia projektre
@@ -234,10 +303,10 @@ const ReferenceSection = () => (
 
 const Footer = () => (
   <footer className="py-12 px-6 border-t border-border">
-    <div className="max-w-5xl mx-auto flex flex-col items-center gap-4">
+    <div className="max-w-5xl mx-auto flex flex-col items-center gap-4 text-center">
       <span className="font-serif text-2xl text-gradient-gold">Vams Design</span>
-      <p className="text-muted-foreground text-sm font-light">
-        Biophilic fal installációk, amelyek meghatározzák a tér karakterét.
+      <p className="text-muted-foreground text-sm font-light italic">
+        Nem dekorálunk. Fókuszpontot hozunk létre.
       </p>
       <a href={ctaLink} className="text-gold text-sm uppercase tracking-widest hover:text-foreground transition-colors">
         Jelentkezem →
@@ -253,6 +322,7 @@ const Index = () => (
     <SolutionSection />
     <WhatWeDoSection />
     <DesireSection />
+    <AudienceSection />
     <ReferenceSection />
     <Footer />
   </>
